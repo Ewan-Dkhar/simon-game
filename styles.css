@@ -1,6 +1,10 @@
 body {
   text-align: center;
   background-color: #011F3F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #level-title {
@@ -24,6 +28,14 @@ body {
   width: 200px;
   border: 10px solid black;
   border-radius: 20%;
+}
+
+.btn-1{
+  font-size: 2rem;
+  font-family: 'Press Start 2P', cursive;
+  padding: 20px 50px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .game-over {
