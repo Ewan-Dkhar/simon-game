@@ -28,14 +28,16 @@ const checkPattern = () => {
             colorPattern = []
             userPattern = []
             level = 1
-            $("h1").text(`Game Over, Press Any Key to Restart`)
+            $("h1").text(`Game Over, Press Play Again to Restart`)
             const audio = new Audio(`sounds/wrong.mp3`);
             audio.play();
             $("body").addClass("game-over")
             setTimeout(() => {
                 $("body").removeClass("game-over")
             }, 50);
+            $(".btn-1").show().text("Play Again")
         }
+        
     }
 }
 
@@ -52,17 +54,24 @@ const handleClick = (e) => {
                 getRandomColor()
             }, 1000);
         }
+        
     }
 }
 
 $(".btn").on("click", handleClick)
 
 
-$("body").keydown(() => {
-    if(run === false) {
-        getRandomColor();
-        $("h1").text(`Level ${level}`)
-        run = true
-    }
+$(".btn-1").click(() => {
+    setTimeout(() => {
+        if(run === false) {
+            getRandomColor();
+            $("h1").text(`Level ${level}`)
+            run = true
+            $(".btn-1").hide()
+        }
+    }, 500);
 })
+
+
+
 
